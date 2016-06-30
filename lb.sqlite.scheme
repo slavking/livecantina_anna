@@ -1,0 +1,4 @@
+-- Describe POSTS
+CREATE TABLE posts (id INTEGER PRIMARY KEY, ident TEXT, name TEXT, trip TEXT, convo TEXT, text TEXT, date TEXT, country, country_name)
+-- Describe POSTS
+CREATE TABLE posts (id INTEGER PRIMARY KEY, ident TEXT, name TEXT, trip TEXT, convo TEXT, text TEXT, date TEXT, country, country_name)

@@ -1,0 +1,2 @@
+-- Describe KCPOSTS
+CREATE TABLE kcposts (country, date, postnumber, threadnumber, sage, subject, text)

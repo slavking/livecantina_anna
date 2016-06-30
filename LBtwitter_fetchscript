@@ -1,0 +1,9 @@
+#!/bin/bash
+while true
+do
+	python feedparser_hashtag.py > LBtwitter
+	echo "updated hashtag"
+	python feedparser_kanzez.py > LBtwitter_kanzez
+	echo "updated kanzez"
+	sleep 30 
+done

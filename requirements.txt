@@ -1,0 +1,7 @@
+wikipedia
+duckduckgo
+wolframalpha
+cleverbot
+sqlite3
+socketIO-client==0.5.6
+urbandict
