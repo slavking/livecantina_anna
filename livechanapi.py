@@ -53,7 +53,7 @@ def post_chat(body, chat, name="Anonymous", convo="General", trip="", file="" ):
         post_params.append(poster.encode.MultipartParam.from_file("image", file))
 
     datagen, headers = poster.encode.multipart_encode(post_params)
-    uri = 'https://livebunker.rocks/chat/'+chat
+    uri = 'http://23.94.75.60/chat/'+chat
     req = urllib2.Request(uri, datagen, headers)
     return opener.open(req)
     #return post('https://livebunker.net/chat/'+chat, post_params)
@@ -72,7 +72,7 @@ def display_chat(chat_obj):
     print
 
 def get_data(chat):
-    data_response = fetch('https://livebunker.rocks/data/'+chat)
+    data_response = fetch('http://23.94.75.60/data/'+chat)
     json_data = json.loads(data_response.read())
     for i in json_data[::-1]:
         display_chat(i)
@@ -90,7 +90,7 @@ def on_chat(*args):
         return
     msg = args[0]["name"]+"~ "
     if ("image" in args[0]):
-        filename = "https://livebunker.rocks/tmp/uploads/"+re.compile('[\w\-\.]*$').search(args[0]["image"]).group(0)
+        filename = "http://23.94.75.60/tmp/uploads/"+re.compile('[\w\-\.]*$').search(args[0]["image"]).group(0)
         msg += "file: "+filename+" "
     msg += (" ".join(args[0]["body"].splitlines()))
     livechanBot.sendMsg(channel, msg)
@@ -117,7 +117,7 @@ def login(callback=on_chat):
     #login_response = post('https://livechan.net/login', post_params)
     #login_html = login_response.read()
 
-    cookie = cookielib.Cookie(version=0, name='password_livebunker', value=config.nolimitCookie, port=None, port_specified=False, domain='livebunker.rocks',
+    cookie = cookielib.Cookie(version=0, name='password_livebunker', value=config.nolimitCookie, port=None, port_specified=False, domain='23.94.75.60',
             domain_specified=False, domain_initial_dot=False,
             path='/', path_specified=True, secure=False, expires=None,
             discard=True, comment=None, comment_url=None, rest={'HttpOnly': None}, rfc2109=False)
@@ -128,7 +128,7 @@ def login(callback=on_chat):
         login()
 
     global socketIO
-    socketIO = SocketIO('https://livebunker.rocks', cookies={'password_livebunker': livechan_pass,
+    socketIO = SocketIO('http://23.94.75.60', cookies={'password_livebunker': livechan_pass,
     'password_livechan': livechan_pass})
     socketIO.on('chat', callback)
     socketIO.on('request_location', on_request_location)
