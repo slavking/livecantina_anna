@@ -166,9 +166,9 @@ def process_chat(*args):
             out_message = "O shit waddup"
         elif 'pian' in message.lower() or 'scriabin' in message.lower():
             out_message = "fuck off"
-        elif (('zack' in message.lower() or 'zach' in message.lower() or 'cali' in message.lower()) and 'fag' in message.lower()):
-            post_chat('shutting down due to insufficient BTC funds', channel, name="anna", trip=config.annaTrip, convo='', file=img)
-            os.kill(os.getpid(),9)
+#        elif (('zack' in message.lower() or 'zach' in message.lower() or 'cali' in message.lower()) and 'fag' in message.lower()):
+#            post_chat('shutting down due to insufficient BTC funds', channel, name="anna", trip=config.annaTrip, convo='', file=img)
+#            os.kill(os.getpid(),9)
         elif 'k' in message.lower() and 'pop' in message.lower():
 			out_message = "pop pop pop"
 			img = "pop.jpg"
@@ -223,6 +223,19 @@ def process_chat(*args):
         if (t):
             out_message, img = game.play(t.group(1), ident, name, country)
             convo = "hangman"
+            
+        # buttben
+        #t = re.compile('\.buttben( (.+))?').match(message)
+        #if (t):
+			#img = game.buttbenx(ident, name, country)
+			#post_chat(out_message, channel, name="anna", trip=config.annaTrip, convo='hangman', file=img)
+			#out_message, img = game.buttbenx(ident, name, country)
+			#out_message, img = game.buttbeny(ident, name, country)
+			#out_message, img = game.buttbenz(ident, name, country)
+			#out_message, img = game.buttbenq(ident, name, country)
+			#out_message, img = game.buttbenw(ident, name, country)
+			#out_message, img = game.buttbenv(ident, name, country)
+			#convo = "hangman"
 
         # wolfram
 #        t = re.compile('\.wa (.+)').match(message)
@@ -336,7 +349,7 @@ def process_chat(*args):
         # hi
         t = re.compile('\.hi( (.+))?').match(message)
         if (t):
-            out_message = "%s, %s!" % (random.choice(['Hi', 'Hello', 'Privet', 'Hola', 'Bonjour', 'Hallo']), name)
+            out_message = "%s, %s!" % (random.choice(['Hi', 'Hello', 'Privet', 'Hola', 'Bonjour', 'Hallo', 'Siema', 'Pryvitanne', 'Zdravstvuj', 'Pryvit', 'Shlamalokh', 'Shalom', 'Shalam', 'Aloha']), name)
         # help
         t = re.compile('\.help( (.+))?').match(message)
         if (t):
@@ -374,9 +387,9 @@ def process_chat(*args):
                 print e
                 cb = Cleverbot()
 
-        #if count[-1]==count[-2] and random.randint(1,5)==2:
-        #    out_message = "CHECKED"
-        #    img = "dubs" + str(random.randint(1,5)) + ".jpg"
+#        if count[-1]==count[-1] and random.randint(1,20)==2 and not count[-1]==count[-2]:
+#            out_message = "nice singles bro"
+#            img = "anna" + str(random.randint(6,8)) + ".png"
 
 		###this checks trips, quads, quints and septs
 		###>you need not dubs folder but files dubs1.jpg - dubs5.jpg right in anna folder
